@@ -43,6 +43,7 @@ class NicknamePokemon(BaseTask):
             return
         id = pokemon.get('pokemon_id',0)-1
         name = self.bot.pokemon_list[id]['Name']
+        cname = self.bot.pokemon_list[id]['CName']
         cp = pokemon.get('cp',0)
         iv_attack = pokemon.get('individual_attack',0)
         iv_defense = pokemon.get('individual_defense',0)
@@ -54,6 +55,7 @@ class NicknamePokemon(BaseTask):
         log_color = 'red'
         try:
             new_name = self.template.format(name=name,
+                                    cname=cname,
                                     id=id,
                                     cp=cp,
                                     iv_attack=iv_attack,

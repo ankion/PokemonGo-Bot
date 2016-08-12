@@ -62,6 +62,8 @@ def main():
     bot = False
 
     try:
+        reload(sys)
+        sys.setdefaultencoding('utf-8')
         logger.info('PokemonGO Bot v1.0')
         sys.stdout = codecs.getwriter('utf8')(sys.stdout)
         sys.stderr = codecs.getwriter('utf8')(sys.stderr)
